@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreConsole", "Booksto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreWebForms", "BookstoreWebForms\BookstoreWebForms.csproj", "{BF85E99A-F7AB-4F74-93FC-B7D73AC9F756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreDesktop", "..\..\..\client-server\BookstoreService\BookstoreDesktop\BookstoreDesktop.csproj", "{3E397576-EF95-46E8-9E45-7F41448D2483}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreDesktop", "C:\Users\Georgi Ivanov\Desktop\Original\BookstoreService\BookstoreDesktop\BookstoreDesktop.csproj", "{3E397576-EF95-46E8-9E45-7F41448D2483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

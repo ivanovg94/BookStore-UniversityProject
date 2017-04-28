@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{376303D8-3150-48FE-B815-2C1827CA4227}</ProjectGuid>
+    <ProjectGuid>{3E397576-EF95-46E8-9E45-7F41448D2483}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BookstoreDesktop</RootNamespace>
@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BookstoreService\BookstoreService.csproj">
-      <Project>{a8f25cae-286e-45bc-9f8a-ccd4b09bb426}</Project>
+      <Project>{2e211122-8748-4282-9924-81e7ee75f427}</Project>
       <Name>BookstoreService</Name>
     </ProjectReference>
   </ItemGroup>
