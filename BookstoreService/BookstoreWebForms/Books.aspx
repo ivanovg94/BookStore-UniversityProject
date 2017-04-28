@@ -22,10 +22,10 @@
             </asp:GridView>
         </div>
     </div>
-    <asp:ObjectDataSource runat="server" ID="booksDataSource" SelectMethod="GetBooksByCategory" TypeName="BookstoreService.Services.BooksService">
+    <asp:ObjectDataSource runat="server" ID="booksDataSource" SelectMethod="GetBooksByCategoryId" TypeName="BookstoreWebForms.BookstoreService.BooksServiceClient">
         <SelectParameters>
             <asp:QueryStringParameter QueryStringField="id" Type="Int32" ConvertEmptyStringToNull="true" Name="categoryId" />
         </SelectParameters>
     </asp:ObjectDataSource>
-    <asp:ObjectDataSource runat="server" ID="categoriesDataSource" SelectMethod="GetAllCategories" TypeName="BookstoreService.Services.BooksService"></asp:ObjectDataSource>
+    <asp:ObjectDataSource runat="server" ID="categoriesDataSource" SelectMethod="GetAllCategories" TypeName="BookstoreWebForms.BookstoreService.BooksServiceClient"></asp:ObjectDataSource>
 </asp:Content>

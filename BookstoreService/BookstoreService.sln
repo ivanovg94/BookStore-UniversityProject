@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreWebForms", "Bookst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreDesktop", "C:\Users\Georgi Ivanov\Desktop\Original\BookstoreService\BookstoreDesktop\BookstoreDesktop.csproj", "{3E397576-EF95-46E8-9E45-7F41448D2483}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreServiceHost", "BookstoreServiceHost\BookstoreServiceHost.csproj", "{EAA96C1F-1A5B-4122-9176-E5F7C566DC04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3E397576-EF95-46E8-9E45-7F41448D2483}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E397576-EF95-46E8-9E45-7F41448D2483}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E397576-EF95-46E8-9E45-7F41448D2483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA96C1F-1A5B-4122-9176-E5F7C566DC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA96C1F-1A5B-4122-9176-E5F7C566DC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA96C1F-1A5B-4122-9176-E5F7C566DC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA96C1F-1A5B-4122-9176-E5F7C566DC04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

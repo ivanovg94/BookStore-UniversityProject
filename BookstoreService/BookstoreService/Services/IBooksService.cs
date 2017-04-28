@@ -1,15 +1,26 @@
 ﻿using System.Collections.Generic;
 using BookstoreService.Entities;
+using System.ServiceModel;
 
 namespace BookstoreService.Services
 {
-    public interface IBooksService
+    namespace BookstoreService.Services
     {
-        IEnumerable<Book> GetAllBooks();
-        IEnumerable<Category> GetAllCategories();
-        Book GetBook(int id);
-        Book GetBookByISBN(string isbn);
-        IEnumerable<Book> GetBooksByCategory(int categoryId);
-        IEnumerable<Book> GetBooksByCategory(Category category);
+        [ServiceContract(Namespace = "http://unwe.bg")]
+        public interface IBooksService
+        {
+            [OperationContract]
+            IEnumerable<Book> GetAllBooks();
+            [OperationContract]
+            IEnumerable<Category> GetAllCategories();
+            [OperationContract(Name = "GetBooksByCategoryId")]
+            IEnumerable<Book> GetBooksByCategory(int categoryId);
+            [OperationContract]
+            IEnumerable<Book> GetBooksByCategory(Category category);
+            [OperationContract]
+            Book GetBook(int id);
+            [OperationContract]
+            Book GetBookByISBN(string isbn);
+        }
     }
 }
