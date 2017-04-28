@@ -21,6 +21,14 @@ namespace BookstoreService.Services
             Book GetBook(int id);
             [OperationContract]
             Book GetBookByISBN(string isbn);
+
+            [OperationContract]
+            Book CreateBook(Book book);
+            [OperationContract]
+            Book UpdateBook(Book book);
+            [OperationContract]
+            void RemoveBook(int bookId);
+
         }
     }
 }

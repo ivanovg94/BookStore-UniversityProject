@@ -23,7 +23,7 @@ namespace BookstoreServiceHost
             try
             {
                 // Добавяме service endpoint, като посочваме интерфейса на услугата, това, че ще използваме HTTP протокола; наименование
-                selfHost.AddServiceEndpoint(typeof(IBooksService), new WSHttpBinding(), "BooksService");
+                selfHost.AddServiceEndpoint(typeof(IBooksService), new WSHttpBinding(SecurityMode.None), "BooksService");
 
                 // Добавяме възможност за обмен на метаданни (описание на самата услуга, нейните операции и типове данни)  
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();

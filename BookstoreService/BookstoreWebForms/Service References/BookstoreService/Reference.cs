@@ -29,7 +29,7 @@ namespace BookstoreWebForms.BookstoreService {
         private BookstoreWebForms.BookstoreService.Category CategoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CategoryIDField;
+        private int CategoryIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private byte[] CoverField;
@@ -86,14 +86,14 @@ namespace BookstoreWebForms.BookstoreService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CategoryID {
+        public int CategoryId {
             get {
-                return this.CategoryIDField;
+                return this.CategoryIdField;
             }
             set {
-                if ((this.CategoryIDField.Equals(value) != true)) {
-                    this.CategoryIDField = value;
-                    this.RaisePropertyChanged("CategoryID");
+                if ((this.CategoryIdField.Equals(value) != true)) {
+                    this.CategoryIdField = value;
+                    this.RaisePropertyChanged("CategoryId");
                 }
             }
         }
