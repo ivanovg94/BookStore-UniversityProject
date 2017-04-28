@@ -1,53 +1,32 @@
 ﻿using BookstoreService.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
+using System.Configuration;
 
 namespace BookstoreService.Services
 {
-    public class BooksService
+    public class BooksService : IBooksService
     {
-        private IEnumerable<Book> _books;
-        private IEnumerable<Category> _categories;
+        private readonly SqlConnection db;
 
         public BooksService()
         {
-            Category _fantasy = new Category() { CategoryID = 1, Name = "Fantasy" };
-            Category _science = new Category() { CategoryID = 2, Name = "Science" };
-
-            _categories = new List<Category>() { _fantasy, _science };
-            _books = new List<Book>()
-            {
-                new Book ()
-                {
-                    BookID=1,
-                    Title="Harry Potter and the Philosoper's Stone",
-                    Year=1998,
-                    Price=30,
-                    Category=_fantasy
-                },
-
-                new Book()
-                {
-                    BookID=2,
-                    Title="Astronomy",
-                    Year=2015,
-                    Price=16.50M,
-                    Category=_science
-                }
-            };
+            db = new SqlConnection(ConfigurationManager.ConnectionStrings["bookstore"].ConnectionString);
         }
 
         public IEnumerable<Book> GetAllBooks()
         {
-            return _books;
+            return db.Query<Book>("SELECT BookID,Title,Year,Price,ISBN,Description,CategoryID FROM Books");
         }
 
         public IEnumerable<Book> GetBooksByCategory(int categoryId)
         {
-            return _books.Where(x => x.Category.CategoryID == categoryId);
+            return db.Query<Book>("SELECT BookID,Title,Year,Price,ISBN,Description,CategoryID FROM Books WHERE CategoryID=@cid", new { cid = categoryId });
         }
 
         public IEnumerable<Book> GetBooksByCategory(Category category)
@@ -55,10 +34,19 @@ namespace BookstoreService.Services
             return GetBooksByCategory(category.CategoryID);
         }
 
-        public IEnumerable<Category> GetAllCategories()
+        public Book GetBook(int id)
         {
-            return _categories;
+            return db.QuerySingle<Book>("SELECT BookID,Title,Year,Price,Cover,ISBN,Description,CategoryID FROM Books WHERE BookID=@bookid", new { bookid = id });
         }
 
+        public Book GetBookByISBN(string isbn)
+        {
+            return db.QuerySingle<Book>("SELECT BookID,Title,Year,Price,Cover,ISBN,Description,CategoryID FROM Books WHERE ISBN=@isbn", new { isbn = isbn });
+        }
+
+        public IEnumerable<Category> GetAllCategories()
+        {
+            return db.Query<Category>("SELECT * FROM Categories");
+        }
     }
 }
