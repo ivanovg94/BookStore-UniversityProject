@@ -59,11 +59,11 @@ namespace BookstoreWebForms
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "1042151084088-aavcs48tk504avi814p2c4fv5eae79na.apps.googleusercontent.com",
+                ClientSecret = "1ZWNF80KoYIV5nvIsvFe_Fbd"
+            });
         }
     }
 }

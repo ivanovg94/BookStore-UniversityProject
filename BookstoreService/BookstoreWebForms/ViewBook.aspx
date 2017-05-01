@@ -33,10 +33,10 @@
     </asp:FormView>
 
     <div class="row">
-        <a href="javascript:history.go(-1);" class="btn btn-default pull-right"><i class="glyphicon glyphicon-arrow-left">i> Назадa></i></a>
+        <a href="javascript:history.go(-1);" class="btn btn-default pull-right"><i class="glyphicon glyphicon-arrow-left"></i> Назад</a>
     </div>
 
-    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="GetBook" TypeName="BookstoreWebForms.BookstoreService.BooksServiceClient">
+    <asp:ObjectDataSource runat="server" ID="booksDataSource" SelectMethod="GetBook" TypeName="BookstoreWebForms.BookstoreService.BooksServiceClient">
         <SelectParameters>
             <asp:QueryStringParameter QueryStringField="id" Type="Int32" ConvertEmptyStringToNull="true" Name="id" />
         </SelectParameters>
