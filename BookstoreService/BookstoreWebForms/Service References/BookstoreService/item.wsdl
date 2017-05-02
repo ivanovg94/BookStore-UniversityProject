@@ -43,6 +43,30 @@
   <wsdl:message name="IBooksService_GetBookByISBN_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBookByISBNResponse" />
   </wsdl:message>
+  <wsdl:message name="IBooksService_GetSimilarBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimilarBooks" />
+  </wsdl:message>
+  <wsdl:message name="IBooksService_GetSimilarBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimilarBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBooksService_CreateBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBook" />
+  </wsdl:message>
+  <wsdl:message name="IBooksService_CreateBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBooksService_UpdateBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBook" />
+  </wsdl:message>
+  <wsdl:message name="IBooksService_UpdateBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBooksService_RemoveBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBook" />
+  </wsdl:message>
+  <wsdl:message name="IBooksService_RemoveBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBookResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBooksService">
     <wsdl:operation name="GetAllBooks">
       <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetAllBooks" message="tns:IBooksService_GetAllBooks_InputMessage" />
@@ -67,6 +91,22 @@
     <wsdl:operation name="GetBookByISBN">
       <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetBookByISBN" message="tns:IBooksService_GetBookByISBN_InputMessage" />
       <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetBookByISBNResponse" message="tns:IBooksService_GetBookByISBN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimilarBooks">
+      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetSimilarBooks" message="tns:IBooksService_GetSimilarBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetSimilarBooksResponse" message="tns:IBooksService_GetSimilarBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBook">
+      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/CreateBook" message="tns:IBooksService_CreateBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/CreateBookResponse" message="tns:IBooksService_CreateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/UpdateBook" message="tns:IBooksService_UpdateBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/UpdateBookResponse" message="tns:IBooksService_UpdateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBook">
+      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/RemoveBook" message="tns:IBooksService_RemoveBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/RemoveBookResponse" message="tns:IBooksService_RemoveBook_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

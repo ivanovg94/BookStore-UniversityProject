@@ -263,6 +263,99 @@ namespace BookstoreWebForms.BookstoreService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExternalBook", Namespace="http://schemas.datacontract.org/2004/07/BookstoreService.Entities")]
+    [System.SerializableAttribute()]
+    public partial class ExternalBook : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ISBNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LinkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PublisherField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISBN {
+            get {
+                return this.ISBNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ISBNField, value) != true)) {
+                    this.ISBNField = value;
+                    this.RaisePropertyChanged("ISBN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Link {
+            get {
+                return this.LinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LinkField, value) != true)) {
+                    this.LinkField = value;
+                    this.RaisePropertyChanged("Link");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Publisher {
+            get {
+                return this.PublisherField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PublisherField, value) != true)) {
+                    this.PublisherField = value;
+                    this.RaisePropertyChanged("Publisher");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://unwe.bg", ConfigurationName="BookstoreService.IBooksService")]
     public interface IBooksService {
@@ -302,6 +395,30 @@ namespace BookstoreWebForms.BookstoreService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBookByISBN", ReplyAction="http://unwe.bg/IBooksService/GetBookByISBNResponse")]
         System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> GetBookByISBNAsync(string isbn);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetSimilarBooks", ReplyAction="http://unwe.bg/IBooksService/GetSimilarBooksResponse")]
+        BookstoreWebForms.BookstoreService.ExternalBook[] GetSimilarBooks(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetSimilarBooks", ReplyAction="http://unwe.bg/IBooksService/GetSimilarBooksResponse")]
+        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.ExternalBook[]> GetSimilarBooksAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/CreateBook", ReplyAction="http://unwe.bg/IBooksService/CreateBookResponse")]
+        BookstoreWebForms.BookstoreService.Book CreateBook(BookstoreWebForms.BookstoreService.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/CreateBook", ReplyAction="http://unwe.bg/IBooksService/CreateBookResponse")]
+        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> CreateBookAsync(BookstoreWebForms.BookstoreService.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/UpdateBook", ReplyAction="http://unwe.bg/IBooksService/UpdateBookResponse")]
+        BookstoreWebForms.BookstoreService.Book UpdateBook(BookstoreWebForms.BookstoreService.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/UpdateBook", ReplyAction="http://unwe.bg/IBooksService/UpdateBookResponse")]
+        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> UpdateBookAsync(BookstoreWebForms.BookstoreService.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/RemoveBook", ReplyAction="http://unwe.bg/IBooksService/RemoveBookResponse")]
+        void RemoveBook(int bookId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/RemoveBook", ReplyAction="http://unwe.bg/IBooksService/RemoveBookResponse")]
+        System.Threading.Tasks.Task RemoveBookAsync(int bookId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -377,6 +494,38 @@ namespace BookstoreWebForms.BookstoreService {
         
         public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> GetBookByISBNAsync(string isbn) {
             return base.Channel.GetBookByISBNAsync(isbn);
+        }
+        
+        public BookstoreWebForms.BookstoreService.ExternalBook[] GetSimilarBooks(int id) {
+            return base.Channel.GetSimilarBooks(id);
+        }
+        
+        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.ExternalBook[]> GetSimilarBooksAsync(int id) {
+            return base.Channel.GetSimilarBooksAsync(id);
+        }
+        
+        public BookstoreWebForms.BookstoreService.Book CreateBook(BookstoreWebForms.BookstoreService.Book book) {
+            return base.Channel.CreateBook(book);
+        }
+        
+        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> CreateBookAsync(BookstoreWebForms.BookstoreService.Book book) {
+            return base.Channel.CreateBookAsync(book);
+        }
+        
+        public BookstoreWebForms.BookstoreService.Book UpdateBook(BookstoreWebForms.BookstoreService.Book book) {
+            return base.Channel.UpdateBook(book);
+        }
+        
+        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> UpdateBookAsync(BookstoreWebForms.BookstoreService.Book book) {
+            return base.Channel.UpdateBookAsync(book);
+        }
+        
+        public void RemoveBook(int bookId) {
+            base.Channel.RemoveBook(bookId);
+        }
+        
+        public System.Threading.Tasks.Task RemoveBookAsync(int bookId) {
+            return base.Channel.RemoveBookAsync(bookId);
         }
     }
 }

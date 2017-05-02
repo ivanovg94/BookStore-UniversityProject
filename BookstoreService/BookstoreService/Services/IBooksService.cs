@@ -23,6 +23,9 @@ namespace BookstoreService.Services
             Book GetBookByISBN(string isbn);
 
             [OperationContract]
+            IEnumerable<ExternalBook> GetSimilarBooks(int id);
+
+            [OperationContract]
             Book CreateBook(Book book);
             [OperationContract]
             Book UpdateBook(Book book);

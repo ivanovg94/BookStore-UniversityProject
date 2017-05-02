@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Configuration;
 using BookstoreService.Services.BookstoreService.Services;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace BookstoreService.Services
 {
@@ -92,6 +94,28 @@ namespace BookstoreService.Services
             db.Execute("DELETE FROM Books WHERE BookID=@bookid", new { bookid = bookId });
         }
 
+        public IEnumerable<ExternalBook> GetSimilarBooks(int id)
+        {
+            string apiKey = "AIzaSyAhbCzn2e-iNl8qY2PhPX46ycVZ9rK8sK0";
+            var book = GetBook(id);
+            using (var client = new WebClient())
+            {
+                string json = client.DownloadString(new Uri($"https://www.googleapis.com/books/v1/volumes?q={book.Title}&key={apiKey}"));
+                dynamic result = JsonConvert.DeserializeObject<dynamic>(json);
+                var similarBooks = new List<ExternalBook>();
+                foreach (var item in result.items)
+                {
+                    similarBooks.Add(new ExternalBook()
+                    {
+                        Title = item.volumeInfo.title,
+                        Publisher = item.volumeInfo.publisher,
+                        Link = item.volumeInfo.previewLink,
+                        ISBN = item.volumeInfo.industryIdentifiers[0].identifier
+                    });
+                }
+                return similarBooks;
+            }
+        }
 
     }
 }

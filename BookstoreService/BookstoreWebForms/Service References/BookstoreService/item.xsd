@@ -34,4 +34,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="ArrayOfExternalBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExternalBook" nillable="true" type="tns:ExternalBook" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExternalBook" nillable="true" type="tns:ArrayOfExternalBook" />
+  <xs:complexType name="ExternalBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Publisher" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExternalBook" nillable="true" type="tns:ExternalBook" />
 </xs:schema>

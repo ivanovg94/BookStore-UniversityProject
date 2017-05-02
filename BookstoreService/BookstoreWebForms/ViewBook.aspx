@@ -29,16 +29,34 @@
 
                 <asp:Button runat="server" ID="BuyButton" Text="Добави" OnClick="BuyButton_Click" CssClass="btn btn-lg btn-success"></asp:Button>
             </div>
+
+            <h3>Подобни книги от Google Books:</h3>
+
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="similarDataSource" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
+                <Columns>
+                    <asp:BoundField DataField="ISBN" HeaderText="ISBN" SortExpression="ISBN"></asp:BoundField>
+                    <asp:HyperLinkField DataTextField="Title" DataTextFormatString="{0}" DataNavigateUrlFields="Link" DataNavigateUrlFormatString="{0}"
+                        HeaderText="Title" SortExpression="Title" Target="_blank"></asp:HyperLinkField>
+                    <asp:BoundField DataField="Publisher" HeaderText="Publisher" SortExpression="Publisher"></asp:BoundField>
+                </Columns>
+            </asp:GridView>
         </ItemTemplate>
+
+
     </asp:FormView>
 
     <div class="row">
-        <a href="javascript:history.go(-1);" class="btn btn-default pull-right"><i class="glyphicon glyphicon-arrow-left"></i> Назад</a>
+        <a href="javascript:history.go(-1);" class="btn btn-default pull-right"><i class="glyphicon glyphicon-arrow-left"></i>Назад</a>
     </div>
 
     <asp:ObjectDataSource runat="server" ID="booksDataSource" SelectMethod="GetBook" TypeName="BookstoreWebForms.BookstoreService.BooksServiceClient">
         <SelectParameters>
             <asp:QueryStringParameter QueryStringField="id" Type="Int32" ConvertEmptyStringToNull="true" Name="id" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource runat="server" ID="similarDataSource" SelectMethod="GetSimilarBooks" TypeName="BookstoreWebForms.BookstoreService.BooksServiceClient">
+        <SelectParameters>
+            <asp:QueryStringParameter QueryStringField="id" Name="id" Type="Int32"></asp:QueryStringParameter>
         </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content>

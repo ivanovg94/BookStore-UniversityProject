@@ -254,6 +254,9 @@
     <Content Include="Service References\BookstoreService\BookstoreWebForms.BookstoreService.Category.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\BookstoreService\BookstoreWebForms.BookstoreService.ExternalBook.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\BookstoreService\item.disco" />
     <None Include="Service References\BookstoreService\configuration91.svcinfo" />
     <None Include="Service References\BookstoreService\configuration.svcinfo" />
