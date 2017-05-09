@@ -30,8 +30,9 @@ namespace BookstoreWebForms.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("bookstore", throwIfV1Schema: false)
         {
+
         }
 
         public static ApplicationDbContext Create()

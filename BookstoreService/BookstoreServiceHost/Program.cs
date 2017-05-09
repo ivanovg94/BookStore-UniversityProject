@@ -14,33 +14,36 @@ namespace BookstoreServiceHost
     {
         static void Main(string[] args)
         {
-            // Дефинираме базовия адрес на услугата (IP и порт, на който да слуша)  
-            Uri baseAddress = new Uri("http://127.0.0.1:8123/");
-
-            // Създаваме обект от тип ServiceHost , на който подаваме типа на класа на услугата и горепосочения адрес
-            ServiceHost selfHost = new ServiceHost(typeof(BooksService), baseAddress);
+            var baseAddressBooks = new Uri("http://localhost:8123/");
+            var baseAddressCart = new Uri("http://localhost:8124/");
+            var selfHostBooks = new ServiceHost(typeof(BooksService), baseAddressBooks);
+            var selfHostCart = new ServiceHost(typeof(CartService), baseAddressCart);
 
             try
             {
-                // Добавяме service endpoint, като посочваме интерфейса на услугата, това, че ще използваме HTTP протокола; наименование
-                selfHost.AddServiceEndpoint(typeof(IBooksService), new WSHttpBinding(SecurityMode.None), "BooksService");
+                selfHostBooks.AddServiceEndpoint(typeof(IBooksService), new WSHttpBinding(SecurityMode.None), "BooksService");
+                selfHostCart.AddServiceEndpoint(typeof(ICartService), new WSHttpBinding(SecurityMode.None), "CartService");
 
-                // Добавяме възможност за обмен на метаданни (описание на самата услуга, нейните операции и типове данни)  
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
-                selfHost.Description.Behaviors.Add(smb);
+                selfHostBooks.Description.Behaviors.Add(smb);
+                ((ServiceDebugBehavior)selfHostBooks.Description.Behaviors[typeof(ServiceDebugBehavior)]).IncludeExceptionDetailInFaults = true;
+                selfHostCart.Description.Behaviors.Add(smb);
+                ((ServiceDebugBehavior)selfHostCart.Description.Behaviors[typeof(ServiceDebugBehavior)]).IncludeExceptionDetailInFaults = true;
 
-                // Стартираме услугата и изчакваме 
-                selfHost.Open();
+                selfHostBooks.Open();
+                selfHostCart.Open();
                 Console.WriteLine("The service is ready.");
                 Console.ReadLine();
 
-                selfHost.Close();
+                selfHostBooks.Close();
+                selfHostCart.Close();
             }
             catch (CommunicationException ce)
             {
                 Console.WriteLine("An exception occurred: {0}", ce.Message);
-                selfHost.Abort();
+                selfHostBooks.Abort();
+                selfHostCart.Abort();
                 Console.Read();
             }
         }

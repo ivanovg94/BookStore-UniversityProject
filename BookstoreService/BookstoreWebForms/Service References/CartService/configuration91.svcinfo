@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="R5swc+g6weWpRC7U8fVa1K+YTwo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="CzIKb7b4c53sDE2MSunbhOm7hwM=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBooksService">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICartService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBooksService</serializedValue>
+          <serializedValue>WSHttpBinding_ICartService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -125,10 +125,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICartService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBooksService1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICartService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBooksService1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -251,7 +251,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_ICartService1" contract="BookstoreService.ICartService" bindingType="wsHttpBinding" address="http://localhost:8124/CartService" bindingConfiguration="WSHttpBinding_ICartService1">
+    <endpoint name="WSHttpBinding_ICartService" contract="CartService.ICartService" bindingType="wsHttpBinding" address="http://localhost:8124/CartService" bindingConfiguration="WSHttpBinding_ICartService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:8124/CartService</serializedValue>
@@ -263,10 +263,10 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICartService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICartService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BookstoreService.ICartService</serializedValue>
+          <serializedValue>CartService.ICartService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -326,7 +326,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICartService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICartService</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -336,7 +336,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IBooksService" contract="BookstoreService.IBooksService" bindingType="wsHttpBinding" address="http://localhost:8123/BooksService" bindingConfiguration="WSHttpBinding_IBooksService">
+    <endpoint name="WSHttpBinding_IBooksService1" contract="CartService.IBooksService" bindingType="wsHttpBinding" address="http://localhost:8123/BooksService" bindingConfiguration="WSHttpBinding_IBooksService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:8123/BooksService</serializedValue>
@@ -348,10 +348,10 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBooksService</serializedValue>
+          <serializedValue>WSHttpBinding_IBooksService1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BookstoreService.IBooksService</serializedValue>
+          <serializedValue>CartService.IBooksService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -411,7 +411,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBooksService</serializedValue>
+          <serializedValue>WSHttpBinding_IBooksService1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

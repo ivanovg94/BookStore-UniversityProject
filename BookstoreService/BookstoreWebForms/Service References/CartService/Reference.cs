@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookstoreWebForms.BookstoreService {
+namespace BookstoreWebForms.CartService {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,7 +23,7 @@ namespace BookstoreWebForms.BookstoreService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BookstoreWebForms.BookstoreService.CartBook[] BooksField;
+        private BookstoreWebForms.CartService.CartBook[] BooksField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CartIDField;
@@ -32,7 +32,7 @@ namespace BookstoreWebForms.BookstoreService {
         private System.DateTime CreatedOnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BookstoreWebForms.BookstoreService.DeliveryOption DeliveryOptionField;
+        private BookstoreWebForms.CartService.DeliveryOption DeliveryOptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> DeliveryOptionIDField;
@@ -44,7 +44,7 @@ namespace BookstoreWebForms.BookstoreService {
         private System.DateTime LastModificationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BookstoreWebForms.BookstoreService.PaymentMethod PaymentMethodField;
+        private BookstoreWebForms.CartService.PaymentMethod PaymentMethodField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> PaymentMethodIDField;
@@ -63,7 +63,7 @@ namespace BookstoreWebForms.BookstoreService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public BookstoreWebForms.BookstoreService.CartBook[] Books {
+        public BookstoreWebForms.CartService.CartBook[] Books {
             get {
                 return this.BooksField;
             }
@@ -102,7 +102,7 @@ namespace BookstoreWebForms.BookstoreService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public BookstoreWebForms.BookstoreService.DeliveryOption DeliveryOption {
+        public BookstoreWebForms.CartService.DeliveryOption DeliveryOption {
             get {
                 return this.DeliveryOptionField;
             }
@@ -154,7 +154,7 @@ namespace BookstoreWebForms.BookstoreService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public BookstoreWebForms.BookstoreService.PaymentMethod PaymentMethod {
+        public BookstoreWebForms.CartService.PaymentMethod PaymentMethod {
             get {
                 return this.PaymentMethodField;
             }
@@ -337,7 +337,7 @@ namespace BookstoreWebForms.BookstoreService {
         private System.DateTime AddedOnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BookstoreWebForms.BookstoreService.Book BookField;
+        private BookstoreWebForms.CartService.Book BookField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int BookIDField;
@@ -372,7 +372,7 @@ namespace BookstoreWebForms.BookstoreService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public BookstoreWebForms.BookstoreService.Book Book {
+        public BookstoreWebForms.CartService.Book Book {
             get {
                 return this.BookField;
             }
@@ -446,7 +446,7 @@ namespace BookstoreWebForms.BookstoreService {
         private int BookIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BookstoreWebForms.BookstoreService.Category CategoryField;
+        private BookstoreWebForms.CartService.Category CategoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CategoryIdField;
@@ -493,7 +493,7 @@ namespace BookstoreWebForms.BookstoreService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public BookstoreWebForms.BookstoreService.Category Category {
+        public BookstoreWebForms.CartService.Category Category {
             get {
                 return this.CategoryField;
             }
@@ -616,7 +616,7 @@ namespace BookstoreWebForms.BookstoreService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BookstoreWebForms.BookstoreService.Book[] BooksField;
+        private BookstoreWebForms.CartService.Book[] BooksField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CategoryIDField;
@@ -635,7 +635,7 @@ namespace BookstoreWebForms.BookstoreService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public BookstoreWebForms.BookstoreService.Book[] Books {
+        public BookstoreWebForms.CartService.Book[] Books {
             get {
                 return this.BooksField;
             }
@@ -777,14 +777,14 @@ namespace BookstoreWebForms.BookstoreService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://unwe.bg", ConfigurationName="BookstoreService.ICartService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://unwe.bg", ConfigurationName="CartService.ICartService")]
     public interface ICartService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/CreateCart", ReplyAction="http://unwe.bg/ICartService/CreateCartResponse")]
-        BookstoreWebForms.BookstoreService.Cart CreateCart(string userId);
+        BookstoreWebForms.CartService.Cart CreateCart(string userId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/CreateCart", ReplyAction="http://unwe.bg/ICartService/CreateCartResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Cart> CreateCartAsync(string userId);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Cart> CreateCartAsync(string userId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/AddToCart", ReplyAction="http://unwe.bg/ICartService/AddToCartResponse")]
         bool AddToCart(int cartId, int bookId);
@@ -793,10 +793,10 @@ namespace BookstoreWebForms.BookstoreService {
         System.Threading.Tasks.Task<bool> AddToCartAsync(int cartId, int bookId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetCart", ReplyAction="http://unwe.bg/ICartService/GetCartResponse")]
-        BookstoreWebForms.BookstoreService.Cart GetCart(int cartId);
+        BookstoreWebForms.CartService.Cart GetCart(int cartId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetCart", ReplyAction="http://unwe.bg/ICartService/GetCartResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Cart> GetCartAsync(int cartId);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Cart> GetCartAsync(int cartId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/RemoveFromCart", ReplyAction="http://unwe.bg/ICartService/RemoveFromCartResponse")]
         bool RemoveFromCart(int cartId, int bookId);
@@ -805,16 +805,16 @@ namespace BookstoreWebForms.BookstoreService {
         System.Threading.Tasks.Task<bool> RemoveFromCartAsync(int cartId, int bookId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/SetPaymentMethod", ReplyAction="http://unwe.bg/ICartService/SetPaymentMethodResponse")]
-        bool SetPaymentMethod(int cartId, BookstoreWebForms.BookstoreService.PaymentMethod method);
+        bool SetPaymentMethod(int cartId, BookstoreWebForms.CartService.PaymentMethod method);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/SetPaymentMethod", ReplyAction="http://unwe.bg/ICartService/SetPaymentMethodResponse")]
-        System.Threading.Tasks.Task<bool> SetPaymentMethodAsync(int cartId, BookstoreWebForms.BookstoreService.PaymentMethod method);
+        System.Threading.Tasks.Task<bool> SetPaymentMethodAsync(int cartId, BookstoreWebForms.CartService.PaymentMethod method);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/SetDeliveryOptions", ReplyAction="http://unwe.bg/ICartService/SetDeliveryOptionsResponse")]
-        bool SetDeliveryOptions(int cartId, BookstoreWebForms.BookstoreService.DeliveryOption options);
+        bool SetDeliveryOptions(int cartId, BookstoreWebForms.CartService.DeliveryOption options);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/SetDeliveryOptions", ReplyAction="http://unwe.bg/ICartService/SetDeliveryOptionsResponse")]
-        System.Threading.Tasks.Task<bool> SetDeliveryOptionsAsync(int cartId, BookstoreWebForms.BookstoreService.DeliveryOption options);
+        System.Threading.Tasks.Task<bool> SetDeliveryOptionsAsync(int cartId, BookstoreWebForms.CartService.DeliveryOption options);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/Purchase", ReplyAction="http://unwe.bg/ICartService/PurchaseResponse")]
         bool Purchase(int cartId);
@@ -823,17 +823,17 @@ namespace BookstoreWebForms.BookstoreService {
         System.Threading.Tasks.Task<bool> PurchaseAsync(int cartId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetDeliveryOptions", ReplyAction="http://unwe.bg/ICartService/GetDeliveryOptionsResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Cart))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.DeliveryOption))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.PaymentMethod))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Cart))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.CartBook[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.CartBook))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Book))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Category))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Book[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.DeliveryOption))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.PaymentMethod))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Category[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.ExternalBook[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.ExternalBook))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] GetDeliveryOptions();
         
@@ -841,17 +841,17 @@ namespace BookstoreWebForms.BookstoreService {
         System.Threading.Tasks.Task<object[]> GetDeliveryOptionsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetPaymentMethods", ReplyAction="http://unwe.bg/ICartService/GetPaymentMethodsResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Cart))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.DeliveryOption))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.PaymentMethod))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Cart))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.CartBook[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.CartBook))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Book))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Category))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Book[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.DeliveryOption))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.PaymentMethod))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.Category[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.ExternalBook[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.CartService.ExternalBook))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object[] GetPaymentMethods();
         
@@ -860,12 +860,12 @@ namespace BookstoreWebForms.BookstoreService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICartServiceChannel : BookstoreWebForms.BookstoreService.ICartService, System.ServiceModel.IClientChannel {
+    public interface ICartServiceChannel : BookstoreWebForms.CartService.ICartService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CartServiceClient : System.ServiceModel.ClientBase<BookstoreWebForms.BookstoreService.ICartService>, BookstoreWebForms.BookstoreService.ICartService {
+    public partial class CartServiceClient : System.ServiceModel.ClientBase<BookstoreWebForms.CartService.ICartService>, BookstoreWebForms.CartService.ICartService {
         
         public CartServiceClient() {
         }
@@ -886,11 +886,11 @@ namespace BookstoreWebForms.BookstoreService {
                 base(binding, remoteAddress) {
         }
         
-        public BookstoreWebForms.BookstoreService.Cart CreateCart(string userId) {
+        public BookstoreWebForms.CartService.Cart CreateCart(string userId) {
             return base.Channel.CreateCart(userId);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Cart> CreateCartAsync(string userId) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Cart> CreateCartAsync(string userId) {
             return base.Channel.CreateCartAsync(userId);
         }
         
@@ -902,11 +902,11 @@ namespace BookstoreWebForms.BookstoreService {
             return base.Channel.AddToCartAsync(cartId, bookId);
         }
         
-        public BookstoreWebForms.BookstoreService.Cart GetCart(int cartId) {
+        public BookstoreWebForms.CartService.Cart GetCart(int cartId) {
             return base.Channel.GetCart(cartId);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Cart> GetCartAsync(int cartId) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Cart> GetCartAsync(int cartId) {
             return base.Channel.GetCartAsync(cartId);
         }
         
@@ -918,19 +918,19 @@ namespace BookstoreWebForms.BookstoreService {
             return base.Channel.RemoveFromCartAsync(cartId, bookId);
         }
         
-        public bool SetPaymentMethod(int cartId, BookstoreWebForms.BookstoreService.PaymentMethod method) {
+        public bool SetPaymentMethod(int cartId, BookstoreWebForms.CartService.PaymentMethod method) {
             return base.Channel.SetPaymentMethod(cartId, method);
         }
         
-        public System.Threading.Tasks.Task<bool> SetPaymentMethodAsync(int cartId, BookstoreWebForms.BookstoreService.PaymentMethod method) {
+        public System.Threading.Tasks.Task<bool> SetPaymentMethodAsync(int cartId, BookstoreWebForms.CartService.PaymentMethod method) {
             return base.Channel.SetPaymentMethodAsync(cartId, method);
         }
         
-        public bool SetDeliveryOptions(int cartId, BookstoreWebForms.BookstoreService.DeliveryOption options) {
+        public bool SetDeliveryOptions(int cartId, BookstoreWebForms.CartService.DeliveryOption options) {
             return base.Channel.SetDeliveryOptions(cartId, options);
         }
         
-        public System.Threading.Tasks.Task<bool> SetDeliveryOptionsAsync(int cartId, BookstoreWebForms.BookstoreService.DeliveryOption options) {
+        public System.Threading.Tasks.Task<bool> SetDeliveryOptionsAsync(int cartId, BookstoreWebForms.CartService.DeliveryOption options) {
             return base.Channel.SetDeliveryOptionsAsync(cartId, options);
         }
         
@@ -960,62 +960,62 @@ namespace BookstoreWebForms.BookstoreService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://unwe.bg", ConfigurationName="BookstoreService.IBooksService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://unwe.bg", ConfigurationName="CartService.IBooksService")]
     public interface IBooksService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetAllBooks", ReplyAction="http://unwe.bg/IBooksService/GetAllBooksResponse")]
-        BookstoreWebForms.BookstoreService.Book[] GetAllBooks();
+        BookstoreWebForms.CartService.Book[] GetAllBooks();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetAllBooks", ReplyAction="http://unwe.bg/IBooksService/GetAllBooksResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book[]> GetAllBooksAsync();
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book[]> GetAllBooksAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetAllCategories", ReplyAction="http://unwe.bg/IBooksService/GetAllCategoriesResponse")]
-        BookstoreWebForms.BookstoreService.Category[] GetAllCategories();
+        BookstoreWebForms.CartService.Category[] GetAllCategories();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetAllCategories", ReplyAction="http://unwe.bg/IBooksService/GetAllCategoriesResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Category[]> GetAllCategoriesAsync();
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Category[]> GetAllCategoriesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBooksByCategoryId", ReplyAction="http://unwe.bg/IBooksService/GetBooksByCategoryIdResponse")]
-        BookstoreWebForms.BookstoreService.Book[] GetBooksByCategoryId(int categoryId);
+        BookstoreWebForms.CartService.Book[] GetBooksByCategoryId(int categoryId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBooksByCategoryId", ReplyAction="http://unwe.bg/IBooksService/GetBooksByCategoryIdResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book[]> GetBooksByCategoryIdAsync(int categoryId);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book[]> GetBooksByCategoryIdAsync(int categoryId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBooksByCategory", ReplyAction="http://unwe.bg/IBooksService/GetBooksByCategoryResponse")]
-        BookstoreWebForms.BookstoreService.Book[] GetBooksByCategory(BookstoreWebForms.BookstoreService.Category category);
+        BookstoreWebForms.CartService.Book[] GetBooksByCategory(BookstoreWebForms.CartService.Category category);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBooksByCategory", ReplyAction="http://unwe.bg/IBooksService/GetBooksByCategoryResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book[]> GetBooksByCategoryAsync(BookstoreWebForms.BookstoreService.Category category);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book[]> GetBooksByCategoryAsync(BookstoreWebForms.CartService.Category category);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBook", ReplyAction="http://unwe.bg/IBooksService/GetBookResponse")]
-        BookstoreWebForms.BookstoreService.Book GetBook(int id);
+        BookstoreWebForms.CartService.Book GetBook(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBook", ReplyAction="http://unwe.bg/IBooksService/GetBookResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> GetBookAsync(int id);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> GetBookAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBookByISBN", ReplyAction="http://unwe.bg/IBooksService/GetBookByISBNResponse")]
-        BookstoreWebForms.BookstoreService.Book GetBookByISBN(string isbn);
+        BookstoreWebForms.CartService.Book GetBookByISBN(string isbn);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetBookByISBN", ReplyAction="http://unwe.bg/IBooksService/GetBookByISBNResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> GetBookByISBNAsync(string isbn);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> GetBookByISBNAsync(string isbn);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetSimilarBooks", ReplyAction="http://unwe.bg/IBooksService/GetSimilarBooksResponse")]
-        BookstoreWebForms.BookstoreService.ExternalBook[] GetSimilarBooks(int id);
+        BookstoreWebForms.CartService.ExternalBook[] GetSimilarBooks(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/GetSimilarBooks", ReplyAction="http://unwe.bg/IBooksService/GetSimilarBooksResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.ExternalBook[]> GetSimilarBooksAsync(int id);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.ExternalBook[]> GetSimilarBooksAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/CreateBook", ReplyAction="http://unwe.bg/IBooksService/CreateBookResponse")]
-        BookstoreWebForms.BookstoreService.Book CreateBook(BookstoreWebForms.BookstoreService.Book book);
+        BookstoreWebForms.CartService.Book CreateBook(BookstoreWebForms.CartService.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/CreateBook", ReplyAction="http://unwe.bg/IBooksService/CreateBookResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> CreateBookAsync(BookstoreWebForms.BookstoreService.Book book);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> CreateBookAsync(BookstoreWebForms.CartService.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/UpdateBook", ReplyAction="http://unwe.bg/IBooksService/UpdateBookResponse")]
-        BookstoreWebForms.BookstoreService.Book UpdateBook(BookstoreWebForms.BookstoreService.Book book);
+        BookstoreWebForms.CartService.Book UpdateBook(BookstoreWebForms.CartService.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/UpdateBook", ReplyAction="http://unwe.bg/IBooksService/UpdateBookResponse")]
-        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> UpdateBookAsync(BookstoreWebForms.BookstoreService.Book book);
+        System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> UpdateBookAsync(BookstoreWebForms.CartService.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/IBooksService/RemoveBook", ReplyAction="http://unwe.bg/IBooksService/RemoveBookResponse")]
         void RemoveBook(int bookId);
@@ -1025,12 +1025,12 @@ namespace BookstoreWebForms.BookstoreService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBooksServiceChannel : BookstoreWebForms.BookstoreService.IBooksService, System.ServiceModel.IClientChannel {
+    public interface IBooksServiceChannel : BookstoreWebForms.CartService.IBooksService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BooksServiceClient : System.ServiceModel.ClientBase<BookstoreWebForms.BookstoreService.IBooksService>, BookstoreWebForms.BookstoreService.IBooksService {
+    public partial class BooksServiceClient : System.ServiceModel.ClientBase<BookstoreWebForms.CartService.IBooksService>, BookstoreWebForms.CartService.IBooksService {
         
         public BooksServiceClient() {
         }
@@ -1051,75 +1051,75 @@ namespace BookstoreWebForms.BookstoreService {
                 base(binding, remoteAddress) {
         }
         
-        public BookstoreWebForms.BookstoreService.Book[] GetAllBooks() {
+        public BookstoreWebForms.CartService.Book[] GetAllBooks() {
             return base.Channel.GetAllBooks();
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book[]> GetAllBooksAsync() {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book[]> GetAllBooksAsync() {
             return base.Channel.GetAllBooksAsync();
         }
         
-        public BookstoreWebForms.BookstoreService.Category[] GetAllCategories() {
+        public BookstoreWebForms.CartService.Category[] GetAllCategories() {
             return base.Channel.GetAllCategories();
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Category[]> GetAllCategoriesAsync() {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Category[]> GetAllCategoriesAsync() {
             return base.Channel.GetAllCategoriesAsync();
         }
         
-        public BookstoreWebForms.BookstoreService.Book[] GetBooksByCategoryId(int categoryId) {
+        public BookstoreWebForms.CartService.Book[] GetBooksByCategoryId(int categoryId) {
             return base.Channel.GetBooksByCategoryId(categoryId);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book[]> GetBooksByCategoryIdAsync(int categoryId) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book[]> GetBooksByCategoryIdAsync(int categoryId) {
             return base.Channel.GetBooksByCategoryIdAsync(categoryId);
         }
         
-        public BookstoreWebForms.BookstoreService.Book[] GetBooksByCategory(BookstoreWebForms.BookstoreService.Category category) {
+        public BookstoreWebForms.CartService.Book[] GetBooksByCategory(BookstoreWebForms.CartService.Category category) {
             return base.Channel.GetBooksByCategory(category);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book[]> GetBooksByCategoryAsync(BookstoreWebForms.BookstoreService.Category category) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book[]> GetBooksByCategoryAsync(BookstoreWebForms.CartService.Category category) {
             return base.Channel.GetBooksByCategoryAsync(category);
         }
         
-        public BookstoreWebForms.BookstoreService.Book GetBook(int id) {
+        public BookstoreWebForms.CartService.Book GetBook(int id) {
             return base.Channel.GetBook(id);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> GetBookAsync(int id) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> GetBookAsync(int id) {
             return base.Channel.GetBookAsync(id);
         }
         
-        public BookstoreWebForms.BookstoreService.Book GetBookByISBN(string isbn) {
+        public BookstoreWebForms.CartService.Book GetBookByISBN(string isbn) {
             return base.Channel.GetBookByISBN(isbn);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> GetBookByISBNAsync(string isbn) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> GetBookByISBNAsync(string isbn) {
             return base.Channel.GetBookByISBNAsync(isbn);
         }
         
-        public BookstoreWebForms.BookstoreService.ExternalBook[] GetSimilarBooks(int id) {
+        public BookstoreWebForms.CartService.ExternalBook[] GetSimilarBooks(int id) {
             return base.Channel.GetSimilarBooks(id);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.ExternalBook[]> GetSimilarBooksAsync(int id) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.ExternalBook[]> GetSimilarBooksAsync(int id) {
             return base.Channel.GetSimilarBooksAsync(id);
         }
         
-        public BookstoreWebForms.BookstoreService.Book CreateBook(BookstoreWebForms.BookstoreService.Book book) {
+        public BookstoreWebForms.CartService.Book CreateBook(BookstoreWebForms.CartService.Book book) {
             return base.Channel.CreateBook(book);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> CreateBookAsync(BookstoreWebForms.BookstoreService.Book book) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> CreateBookAsync(BookstoreWebForms.CartService.Book book) {
             return base.Channel.CreateBookAsync(book);
         }
         
-        public BookstoreWebForms.BookstoreService.Book UpdateBook(BookstoreWebForms.BookstoreService.Book book) {
+        public BookstoreWebForms.CartService.Book UpdateBook(BookstoreWebForms.CartService.Book book) {
             return base.Channel.UpdateBook(book);
         }
         
-        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.Book> UpdateBookAsync(BookstoreWebForms.BookstoreService.Book book) {
+        public System.Threading.Tasks.Task<BookstoreWebForms.CartService.Book> UpdateBookAsync(BookstoreWebForms.CartService.Book book) {
             return base.Channel.UpdateBookAsync(book);
         }
         
