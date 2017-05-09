@@ -66,6 +66,7 @@ namespace BookstoreWebForms
             cs.SetDeliveryOptions(cartId, new DeliveryOption() { DeliveryOptionID = Convert.ToInt32(listDeliveryOptions.SelectedValue) });
             cs.SetPaymentMethod(cartId, new PaymentMethod() { PaymentMethodID = Convert.ToInt32(listPaymentMethods.SelectedValue) });
 
+            Response.Redirect("~/CartPay.aspx");
         }
     }
 }

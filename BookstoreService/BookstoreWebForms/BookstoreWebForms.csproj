@@ -202,6 +202,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Books.aspx" />
     <Content Include="Cart.aspx" />
+    <Content Include="CartPay.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -464,6 +465,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartPay.aspx.cs">
+      <DependentUpon>CartPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartPay.aspx.designer.cs">
+      <DependentUpon>CartPay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
