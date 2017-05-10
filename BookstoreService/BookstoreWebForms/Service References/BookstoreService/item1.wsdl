@@ -5,7 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8123/?xsd=xsd0" namespace="http://unwe.bg" />
       <xsd:import schemaLocation="http://localhost:8123/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8123/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BookstoreService.Entities" />
-      <xsd:import schemaLocation="http://localhost:8123/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICartService_CreateCart_InputMessage">

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://unwe.bg" elementFormDefault="qualified" targetNamespace="http://unwe.bg" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8123/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BookstoreService.Entities" />
-  <xs:import schemaLocation="http://localhost:8123/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="CreateCart">
     <xs:complexType>
       <xs:sequence>
@@ -112,7 +111,7 @@
   <xs:element name="GetDeliveryOptionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDeliveryOptionsResult" nillable="true" type="q5:ArrayOfanyType" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BookstoreService.Entities" minOccurs="0" name="GetDeliveryOptionsResult" nillable="true" type="q5:ArrayOfDeliveryOption" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -124,7 +123,7 @@
   <xs:element name="GetPaymentMethodsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPaymentMethodsResult" nillable="true" type="q6:ArrayOfanyType" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BookstoreService.Entities" minOccurs="0" name="GetPaymentMethodsResult" nillable="true" type="q6:ArrayOfPaymentMethod" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

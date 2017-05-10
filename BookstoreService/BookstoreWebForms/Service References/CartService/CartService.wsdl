@@ -7,13 +7,6 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IBooksService_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <wsaw:UsingAddressing />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsdl:import namespace="http://unwe.bg" location="http://localhost:8124/?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="WSHttpBinding_ICartService" type="i0:ICartService">
@@ -101,113 +94,11 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="WSHttpBinding_IBooksService" type="i0:IBooksService">
-    <wsp:PolicyReference URI="#WSHttpBinding_IBooksService_policy" />
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetAllBooks">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/GetAllBooks" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllCategories">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/GetAllCategories" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetBooksByCategoryId">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/GetBooksByCategoryId" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetBooksByCategory">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/GetBooksByCategory" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetBook">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/GetBook" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetBookByISBN">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/GetBookByISBN" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSimilarBooks">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/GetSimilarBooks" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateBook">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/CreateBook" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateBook">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/UpdateBook" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RemoveBook">
-      <soap12:operation soapAction="http://unwe.bg/IBooksService/RemoveBook" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
   <wsdl:service name="CartService">
     <wsdl:port name="WSHttpBinding_ICartService" binding="tns:WSHttpBinding_ICartService">
       <soap12:address location="http://localhost:8124/CartService" />
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:8124/CartService</wsa10:Address>
-      </wsa10:EndpointReference>
-    </wsdl:port>
-  </wsdl:service>
-  <wsdl:service name="BooksService">
-    <wsdl:port name="WSHttpBinding_IBooksService" binding="tns:WSHttpBinding_IBooksService">
-      <soap12:address location="http://localhost:8123/BooksService" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:8123/BooksService</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

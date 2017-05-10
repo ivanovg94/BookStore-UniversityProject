@@ -823,40 +823,16 @@ namespace BookstoreWebForms.BookstoreService {
         System.Threading.Tasks.Task<bool> PurchaseAsync(int cartId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetDeliveryOptions", ReplyAction="http://unwe.bg/ICartService/GetDeliveryOptionsResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Cart))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.DeliveryOption))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.PaymentMethod))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetDeliveryOptions();
+        BookstoreWebForms.BookstoreService.DeliveryOption[] GetDeliveryOptions();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetDeliveryOptions", ReplyAction="http://unwe.bg/ICartService/GetDeliveryOptionsResponse")]
-        System.Threading.Tasks.Task<object[]> GetDeliveryOptionsAsync();
+        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.DeliveryOption[]> GetDeliveryOptionsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetPaymentMethods", ReplyAction="http://unwe.bg/ICartService/GetPaymentMethodsResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Cart))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.CartBook))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Book[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.DeliveryOption))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.PaymentMethod))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.Category[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BookstoreWebForms.BookstoreService.ExternalBook))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetPaymentMethods();
+        BookstoreWebForms.BookstoreService.PaymentMethod[] GetPaymentMethods();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://unwe.bg/ICartService/GetPaymentMethods", ReplyAction="http://unwe.bg/ICartService/GetPaymentMethodsResponse")]
-        System.Threading.Tasks.Task<object[]> GetPaymentMethodsAsync();
+        System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.PaymentMethod[]> GetPaymentMethodsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -942,19 +918,19 @@ namespace BookstoreWebForms.BookstoreService {
             return base.Channel.PurchaseAsync(cartId);
         }
         
-        public object[] GetDeliveryOptions() {
+        public BookstoreWebForms.BookstoreService.DeliveryOption[] GetDeliveryOptions() {
             return base.Channel.GetDeliveryOptions();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetDeliveryOptionsAsync() {
+        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.DeliveryOption[]> GetDeliveryOptionsAsync() {
             return base.Channel.GetDeliveryOptionsAsync();
         }
         
-        public object[] GetPaymentMethods() {
+        public BookstoreWebForms.BookstoreService.PaymentMethod[] GetPaymentMethods() {
             return base.Channel.GetPaymentMethods();
         }
         
-        public System.Threading.Tasks.Task<object[]> GetPaymentMethodsAsync() {
+        public System.Threading.Tasks.Task<BookstoreWebForms.BookstoreService.PaymentMethod[]> GetPaymentMethodsAsync() {
             return base.Channel.GetPaymentMethodsAsync();
         }
     }

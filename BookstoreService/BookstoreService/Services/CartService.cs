@@ -56,12 +56,12 @@ namespace BookstoreService.Services
             return cart;
         }
 
-        public IEnumerable GetDeliveryOptions()
+        public IEnumerable<DeliveryOption> GetDeliveryOptions()
         {
             return db.Query<DeliveryOption>("SELECT * FROM DeliveryOptions ORDER BY 1");
         }
 
-        public IEnumerable GetPaymentMethods()
+        public IEnumerable<PaymentMethod> GetPaymentMethods()
         {
             return db.Query<PaymentMethod>("SELECT * FROM PaymentMethods ORDER BY 1");
         }

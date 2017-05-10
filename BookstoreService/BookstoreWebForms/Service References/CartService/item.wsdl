@@ -5,7 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8124/?xsd=xsd0" namespace="http://unwe.bg" />
       <xsd:import schemaLocation="http://localhost:8124/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8124/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BookstoreService.Entities" />
-      <xsd:import schemaLocation="http://localhost:8124/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICartService_CreateCart_InputMessage">
@@ -62,66 +61,6 @@
   <wsdl:message name="ICartService_GetPaymentMethods_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPaymentMethodsResponse" />
   </wsdl:message>
-  <wsdl:message name="IBooksService_GetAllBooks_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllBooks" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetAllBooks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllBooksResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetAllCategories_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCategories" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetAllCategories_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBooksByCategoryId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBooksByCategoryId" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBooksByCategoryId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBooksByCategoryIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBooksByCategory_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBooksByCategory" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBooksByCategory_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBooksByCategoryResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBook_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBook" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBook_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBookResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBookByISBN_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBookByISBN" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetBookByISBN_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBookByISBNResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetSimilarBooks_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSimilarBooks" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_GetSimilarBooks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSimilarBooksResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_CreateBook_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateBook" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_CreateBook_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateBookResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_UpdateBook_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateBook" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_UpdateBook_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_RemoveBook_InputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveBook" />
-  </wsdl:message>
-  <wsdl:message name="IBooksService_RemoveBook_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveBookResponse" />
-  </wsdl:message>
   <wsdl:portType name="ICartService">
     <wsdl:operation name="CreateCart">
       <wsdl:input wsaw:Action="http://unwe.bg/ICartService/CreateCart" message="tns:ICartService_CreateCart_InputMessage" />
@@ -158,48 +97,6 @@
     <wsdl:operation name="GetPaymentMethods">
       <wsdl:input wsaw:Action="http://unwe.bg/ICartService/GetPaymentMethods" message="tns:ICartService_GetPaymentMethods_InputMessage" />
       <wsdl:output wsaw:Action="http://unwe.bg/ICartService/GetPaymentMethodsResponse" message="tns:ICartService_GetPaymentMethods_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType name="IBooksService">
-    <wsdl:operation name="GetAllBooks">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetAllBooks" message="tns:IBooksService_GetAllBooks_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetAllBooksResponse" message="tns:IBooksService_GetAllBooks_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllCategories">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetAllCategories" message="tns:IBooksService_GetAllCategories_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetAllCategoriesResponse" message="tns:IBooksService_GetAllCategories_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetBooksByCategoryId">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetBooksByCategoryId" message="tns:IBooksService_GetBooksByCategoryId_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetBooksByCategoryIdResponse" message="tns:IBooksService_GetBooksByCategoryId_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetBooksByCategory">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetBooksByCategory" message="tns:IBooksService_GetBooksByCategory_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetBooksByCategoryResponse" message="tns:IBooksService_GetBooksByCategory_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetBook">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetBook" message="tns:IBooksService_GetBook_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetBookResponse" message="tns:IBooksService_GetBook_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetBookByISBN">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetBookByISBN" message="tns:IBooksService_GetBookByISBN_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetBookByISBNResponse" message="tns:IBooksService_GetBookByISBN_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSimilarBooks">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/GetSimilarBooks" message="tns:IBooksService_GetSimilarBooks_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/GetSimilarBooksResponse" message="tns:IBooksService_GetSimilarBooks_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateBook">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/CreateBook" message="tns:IBooksService_CreateBook_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/CreateBookResponse" message="tns:IBooksService_CreateBook_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateBook">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/UpdateBook" message="tns:IBooksService_UpdateBook_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/UpdateBookResponse" message="tns:IBooksService_UpdateBook_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="RemoveBook">
-      <wsdl:input wsaw:Action="http://unwe.bg/IBooksService/RemoveBook" message="tns:IBooksService_RemoveBook_InputMessage" />
-      <wsdl:output wsaw:Action="http://unwe.bg/IBooksService/RemoveBookResponse" message="tns:IBooksService_RemoveBook_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

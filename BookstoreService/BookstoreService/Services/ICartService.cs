@@ -1,5 +1,6 @@
 ﻿using BookstoreService.Entities;
 using System.Collections;
+using System.Collections.Generic;
 using System.ServiceModel;
 
 namespace BookstoreService.Services
@@ -24,9 +25,9 @@ namespace BookstoreService.Services
         bool Purchase(int cartId);
 
         [OperationContract]
-        IEnumerable GetDeliveryOptions();
+        IEnumerable <DeliveryOption> GetDeliveryOptions();
         [OperationContract]
-        IEnumerable GetPaymentMethods();
+        IEnumerable <PaymentMethod> GetPaymentMethods();
 
 
     }

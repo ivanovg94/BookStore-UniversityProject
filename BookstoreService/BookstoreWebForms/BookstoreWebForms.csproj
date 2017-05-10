@@ -266,11 +266,14 @@
     <Content Include="Service References\BookstoreService\BookstoreWebForms.BookstoreService.Cart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\BookstoreService\BookstoreWebForms.BookstoreService.DeliveryOption.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BookstoreService\BookstoreWebForms.BookstoreService.PaymentMethod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\BookstoreService\configuration91.svcinfo" />
     <None Include="Service References\BookstoreService\configuration.svcinfo" />
-    <None Include="Service References\BookstoreService\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\BookstoreService\item1.wsdl" />
     <None Include="Service References\BookstoreService\item3.xsd">
       <SubType>Designer</SubType>
@@ -289,13 +292,10 @@
     <Content Include="Service References\CartService\BookstoreWebForms.CartService.Cart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CartService\BookstoreWebForms.CartService.Book.datasource">
+    <Content Include="Service References\CartService\BookstoreWebForms.CartService.DeliveryOption.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CartService\BookstoreWebForms.CartService.Category.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CartService\BookstoreWebForms.CartService.ExternalBook.datasource">
+    <Content Include="Service References\CartService\BookstoreWebForms.CartService.PaymentMethod.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CartService\item.disco" />
@@ -323,9 +323,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CartService\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CartService\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">

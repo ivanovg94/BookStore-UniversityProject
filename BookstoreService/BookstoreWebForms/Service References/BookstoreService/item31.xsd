@@ -73,6 +73,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PaymentMethod" nillable="true" type="tns:PaymentMethod" />
+  <xs:complexType name="ArrayOfDeliveryOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryOption" nillable="true" type="tns:DeliveryOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeliveryOption" nillable="true" type="tns:ArrayOfDeliveryOption" />
+  <xs:complexType name="ArrayOfPaymentMethod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethod" nillable="true" type="tns:PaymentMethod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentMethod" nillable="true" type="tns:ArrayOfPaymentMethod" />
   <xs:complexType name="ArrayOfCategory">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />

@@ -25,7 +25,6 @@
     <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="a3fd62e3-1dde-4e5d-b928-0e572e9e9a57" SourceId="1" SourceUrl="http://localhost:8123/?xsd=xsd0" />
     <MetadataFile FileName="item31.xsd" MetadataType="Schema" ID="71704375-eb99-4754-a891-6cf6c4c4b149" SourceId="1" SourceUrl="http://localhost:8123/?xsd=xsd2" />
     <MetadataFile FileName="item32.xsd" MetadataType="Schema" ID="a270813a-5459-42c3-96ba-073eac4d0fce" SourceId="1" SourceUrl="http://localhost:8123/?xsd=xsd1" />
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="dd2f156b-00bf-4eaa-bbbc-0930ca696b5d" SourceId="1" SourceUrl="http://localhost:8123/?xsd=xsd3" />
     <MetadataFile FileName="item1.wsdl" MetadataType="Wsdl" ID="e8d05997-3df5-4274-b78d-2e154b70948a" SourceId="1" SourceUrl="http://localhost:8123/?wsdl=wsdl0" />
     <MetadataFile FileName="BooksService1.wsdl" MetadataType="Wsdl" ID="057c2f2b-dd58-49b0-97f8-eb1ae293bd83" SourceId="1" SourceUrl="http://localhost:8123/?wsdl" />
     <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="54d0c329-ea1a-43bc-9cba-03e1cf0df1bc" SourceId="1" SourceUrl="http://localhost:8123/?disco" />
